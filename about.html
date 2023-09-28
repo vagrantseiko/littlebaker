@@ -20,7 +20,7 @@
         <section style="background-color: var(--brown11);">
             <div class="container">
                 <div class="row">
-                    <div class="col-4 mt-3"><a href="index.html"><img src="images/little_baker.png"
+                    <div class="col-4 mt-3"><a href="index.html"><img src="https://littlebaker.000webhostapp.com/images/little_baker.png"
                                 class="logo-change wow" data-wow-delay="0s" data-wow-duration="1s" style="width: 180px;"
                                 id="logo_change"></a></div>
                     <div class="col-8">
@@ -77,7 +77,7 @@
             </div>
         </section>
 
-        <section id="s200" style="background-image: url(images/pexels-pavel-danilyuk-5623616.jpg); height: 100vh;">
+        <section id="s200" style="background-image: url(https://littlebaker.000webhostapp.com/images/pexels-pavel-danilyuk-5623616.jpg); height: 100vh;">
             <div class="container">
                 <div class="row">
                     <div class="col-6" style="height: 33vh;"></div>
@@ -97,7 +97,7 @@
             </div>
         </section>
 
-        <section id="s201" style="background-image: url(images/pexels-ksenia-chernaya-3952077.jpg); height: 100vh;">
+        <section id="s201" style="background-image: url(https://littlebaker.000webhostapp.com/images/pexels-ksenia-chernaya-3952077.jpg); height: 100vh;">
             <div class="container">
                 <div class="row">
                     <div class="col-6" style="height: 33vh;"></div>
@@ -121,7 +121,7 @@
         </section>
 
         <!-- s300 企業精神-->
-        <section id="s300" style="background-image: url(images/pexels-mariana-kurnyk-1756064.jpg); height: 100vh;">
+        <section id="s300" style="background-image: url(https://littlebaker.000webhostapp.com/images/pexels-mariana-kurnyk-1756064.jpg); height: 100vh;">
             <div class="container mb-3">
                 <div class="row pt-5">
                     <div class="col-md-6">
@@ -512,7 +512,7 @@
                         })
                         .catch(function (error) {
                             // handle error
-                            console.log(error);
+                            // console.log(error);
                         })
                         .finally(function () {
                             // always executed
@@ -814,7 +814,7 @@
                 //     $("#info_price").val($(this).data("price"));
                 //     $("#info_discount").val($(this).data("discount"));
                 //     $("#info_content").val($(this).data("content"));
-                //     $("#info_photo").attr('src', 'upload/' + $(this).data("photo"));
+                //     $("#info_photo").attr('src', 'https://littlebaker.000webhostapp.com/upload/' + $(this).data("photo"));
                 //     pid = $(this).data("id");
                 // });
 
@@ -829,7 +829,7 @@
                     $("#info_discount").val($(this).data("discount"));
                     $("#info_discount").text('$ ' + $(this).data("discount"));
                     $("#info_content").text($(this).data("content"));
-                    $("#info_photo").attr('src', 'upload/' + $(this).data("photo"));
+                    $("#info_photo").attr('src', 'https://littlebaker.000webhostapp.com/upload/' + $(this).data("photo"));
                     pid = $(this).data("id");
 
                     if (getCookie('uid01') != "") {
@@ -1012,9 +1012,9 @@
             //             if (item.Sell == 'true') {
             //                 // 判斷是否為會員再決定是否顯示會員價
             //                 if (getCookie('uid01') != "") {
-            //                     var productlist = '<div class="col-lg-3 col-6 d-flex flex-column product-box mb-3"><div class="card card-shadow ps-2 pe-2 h-100" style="background-color: var(--brown11);"><div class="col d-flex justify-content-center product-box"><img src="upload/' + item.Photo + '" class="img-thumbnail mt-2 mb-2"></div><h6 class="text-center">' + item.Product + '</h6><div class="ms-3">售價：$ ' + item.Price + '</br>會員價：$' + item.Discount + '</div><a href="#" class="btn btn-default m-3" data-bs-toggle="modal" data-bs-target="#infoModal" data-id="' + item.id + '" data-category="' + item.Category + '" data-product="' + item.Product + '" data-price="' + item.Price + '" data-discount="' + item.Discount + '" data-content="' + item.Content + '" data-photo="' + item.Photo + ' " id="info_btn">產品訊息</a></div></div>';
+            //                     var productlist = '<div class="col-lg-3 col-6 d-flex flex-column product-box mb-3"><div class="card card-shadow ps-2 pe-2 h-100" style="background-color: var(--brown11);"><div class="col d-flex justify-content-center product-box"><img src="https://littlebaker.000webhostapp.com/upload/' + item.Photo + '" class="img-thumbnail mt-2 mb-2"></div><h6 class="text-center">' + item.Product + '</h6><div class="ms-3">售價：$ ' + item.Price + '</br>會員價：$' + item.Discount + '</div><a href="#" class="btn btn-default m-3" data-bs-toggle="modal" data-bs-target="#infoModal" data-id="' + item.id + '" data-category="' + item.Category + '" data-product="' + item.Product + '" data-price="' + item.Price + '" data-discount="' + item.Discount + '" data-content="' + item.Content + '" data-photo="' + item.Photo + ' " id="info_btn">產品訊息</a></div></div>';
             //                 } else {
-            //                     var productlist = '<div class="col-lg-3 col-6 d-flex flex-column product-box mb-3"><div class="card card-shadow ps-2 pe-2 h-100" style="background-color: var(--brown11);"><div class="col d-flex justify-content-center product-box"><img src="upload/' + item.Photo + '" class="img-thumbnail mt-2 mb-2"></div><h6 class="text-center">' + item.Product + '</h6><div class="ms-2"><p>售價：$ ' + item.Price + '</p></div><a href="#" class="btn btn-default m-3" data-bs-toggle="modal" data-bs-target="#infoModal" data-id="' + item.id + '" data-category="' + item.Category + '" data-product="' + item.Product + '" data-price="' + item.Price + '" data-discount="' + item.Discount + '" data-content="' + item.Content + '" data-photo="' + item.Photo + ' " id="info_btn">產品訊息</a></div></div>';
+            //                     var productlist = '<div class="col-lg-3 col-6 d-flex flex-column product-box mb-3"><div class="card card-shadow ps-2 pe-2 h-100" style="background-color: var(--brown11);"><div class="col d-flex justify-content-center product-box"><img src="https://littlebaker.000webhostapp.com/upload/' + item.Photo + '" class="img-thumbnail mt-2 mb-2"></div><h6 class="text-center">' + item.Product + '</h6><div class="ms-2"><p>售價：$ ' + item.Price + '</p></div><a href="#" class="btn btn-default m-3" data-bs-toggle="modal" data-bs-target="#infoModal" data-id="' + item.id + '" data-category="' + item.Category + '" data-product="' + item.Product + '" data-price="' + item.Price + '" data-discount="' + item.Discount + '" data-content="' + item.Content + '" data-photo="' + item.Photo + ' " id="info_btn">產品訊息</a></div></div>';
             //                 }
             //             } else {
             //                 var productlist = '';

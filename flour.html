@@ -14,13 +14,13 @@
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
 
-<body style="background-image: url(images/member_bg.jpg); background-attachment: fixed;">
+<body style="background-image: url(https://littlebaker.000webhostapp.com/images/member_bg.jpg); background-attachment: fixed;">
     <div id="app">
         <!-- s100 選單 -->
         <section style="background-color: var(--brown11);">
             <div class="container">
                 <div class="row">
-                    <div class="col-4 mt-3"><a href="index.html"><img src="images/little_baker.png"
+                    <div class="col-4 mt-3"><a href="index.html"><img src="https://littlebaker.000webhostapp.com/images/little_baker.png"
                                 class="logo-change wow" data-wow-delay="0s" data-wow-duration="1s" style="width: 180px;"
                                 id="logo_change"></a></div>
                     <div class="col-8">
@@ -149,7 +149,7 @@
                                 <div class="card card-shadow ps-2 pe-2 h-100" style="background-color: var(--brown11);">
                                     <!-- Vue 內不能有 - 號，因此 - 刪掉後下個字要改大寫 -->
                                     <div class="col d-flex justify-content-center product-box"><img
-                                            :src="'upload/'+item.Photo" class="img-thumbnail mt-2 mb-2"></div>
+                                            :src="'https://littlebaker.000webhostapp.com/upload/'+item.Photo" class="img-thumbnail mt-2 mb-2"></div>
                                     <h6 class="text-center" style="height: 45px;">{{item.Product}}</h6>
                                     <div class="text-center">售價：$ {{item.Price}}</div>
 
@@ -500,7 +500,7 @@
                     })
                     .catch(function (error) {
                         // handle error
-                        console.log(error);
+                        // console.log(error);
                     })
                     .finally(function () {
                         // always executed
@@ -568,7 +568,7 @@
             // 取得麵粉產品資料
             // $.ajax({
             //     type: "GET",
-            //     url: "api/product/flour_read_api.php",
+            //     url: "https://littlebaker.000webhostapp.com/api/product/flour_read_api.php",
             //     dataType: "json",
             //     success: showdata_flour,
             //     error: function () {
@@ -627,7 +627,7 @@
                 }
             })
 
-            // 確認 uid 是否存在，若存在傳遞至後端 check_uid_api.php 確認是否合法
+            // 確認 uid 是否存在，若存在傳遞至後端 check_uid_https://littlebaker.000webhostapp.com/api.php 確認是否合法
             if (getCookie('uid01') != "") {
                 // uid 存在，傳遞至後端 check_uid_api.php 確認是否合法
                 $.ajax({
@@ -804,7 +804,7 @@
             //     $("#info_price").val($(this).data("price"));
             //     $("#info_discount").val($(this).data("discount"));
             //     $("#info_content").val($(this).data("content"));
-            //     $("#info_photo").attr('src', 'upload/' + $(this).data("photo"));
+            //     $("#info_photo").attr('src', 'https://littlebaker.000webhostapp.com/upload/' + $(this).data("photo"));
             //     pid = $(this).data("id");
             // });
 
@@ -819,7 +819,7 @@
                 $("#info_discount").val($(this).data("discount"));
                 $("#info_discount").text('$ ' + $(this).data("discount"));
                 $("#info_content").text($(this).data("content"));
-                $("#info_photo").attr('src', 'upload/' + $(this).data("photo"));
+                $("#info_photo").attr('src', 'https://littlebaker.000webhostapp.com/upload/' + $(this).data("photo"));
                 pid = $(this).data("id");
 
                 if (getCookie('uid01') != "") {
@@ -908,7 +908,7 @@
 
                     // $.ajax({
                     //     type: "POST",
-                    //     url: "api/cart/cart_create_api.php",
+                    //     url: "https://littlebaker.000webhostapp.com/api/cart/cart_create_api.php",
                     //     data: { username: $tmp_customer, product: $("#info_product").val(), quantity: $("#q-value").val(), price: $("#info_price").val() },
                     //     dataType: "json",
                     //     success: showdata_addcart,
@@ -1007,9 +1007,9 @@
         //             if (item.Sell == 'true') {
         //                 // 判斷是否為會員再決定是否顯示會員價
         //                 if (getCookie('uid01') != "") {
-        //                     var productlist = '<div class="col-lg-3 col-6 d-flex flex-column product-box mb-3"><div class="card card-shadow ps-2 pe-2 h-100" style="background-color: var(--brown11);"><div class="col d-flex justify-content-center product-box"><img src="upload/' + item.Photo + '" class="img-thumbnail mt-2 mb-2"></div><h6 class="text-center">' + item.Product + '</h6><div class="ms-3">售價：$ ' + item.Price + '</br>會員價：$' + item.Discount + '</div><a href="#" class="btn btn-default m-3" data-bs-toggle="modal" data-bs-target="#infoModal" data-id="' + item.id + '" data-category="' + item.Category + '" data-product="' + item.Product + '" data-price="' + item.Price + '" data-discount="' + item.Discount + '" data-content="' + item.Content + '" data-photo="' + item.Photo + ' " id="info_btn">產品訊息</a></div></div>';
+        //                     var productlist = '<div class="col-lg-3 col-6 d-flex flex-column product-box mb-3"><div class="card card-shadow ps-2 pe-2 h-100" style="background-color: var(--brown11);"><div class="col d-flex justify-content-center product-box"><img src="https://littlebaker.000webhostapp.com/upload/' + item.Photo + '" class="img-thumbnail mt-2 mb-2"></div><h6 class="text-center">' + item.Product + '</h6><div class="ms-3">售價：$ ' + item.Price + '</br>會員價：$' + item.Discount + '</div><a href="#" class="btn btn-default m-3" data-bs-toggle="modal" data-bs-target="#infoModal" data-id="' + item.id + '" data-category="' + item.Category + '" data-product="' + item.Product + '" data-price="' + item.Price + '" data-discount="' + item.Discount + '" data-content="' + item.Content + '" data-photo="' + item.Photo + ' " id="info_btn">產品訊息</a></div></div>';
         //                 } else {
-        //                     var productlist = '<div class="col-lg-3 col-6 d-flex flex-column product-box mb-3"><div class="card card-shadow ps-2 pe-2 h-100" style="background-color: var(--brown11);"><div class="col d-flex justify-content-center product-box"><img src="upload/' + item.Photo + '" class="img-thumbnail mt-2 mb-2"></div><h6 class="text-center">' + item.Product + '</h6><div class="ms-2"><p>售價：$ ' + item.Price + '</p></div><a href="#" class="btn btn-default m-3" data-bs-toggle="modal" data-bs-target="#infoModal" data-id="' + item.id + '" data-category="' + item.Category + '" data-product="' + item.Product + '" data-price="' + item.Price + '" data-discount="' + item.Discount + '" data-content="' + item.Content + '" data-photo="' + item.Photo + ' " id="info_btn">產品訊息</a></div></div>';
+        //                     var productlist = '<div class="col-lg-3 col-6 d-flex flex-column product-box mb-3"><div class="card card-shadow ps-2 pe-2 h-100" style="background-color: var(--brown11);"><div class="col d-flex justify-content-center product-box"><img src="https://littlebaker.000webhostapp.com/upload/' + item.Photo + '" class="img-thumbnail mt-2 mb-2"></div><h6 class="text-center">' + item.Product + '</h6><div class="ms-2"><p>售價：$ ' + item.Price + '</p></div><a href="#" class="btn btn-default m-3" data-bs-toggle="modal" data-bs-target="#infoModal" data-id="' + item.id + '" data-category="' + item.Category + '" data-product="' + item.Product + '" data-price="' + item.Price + '" data-discount="' + item.Discount + '" data-content="' + item.Content + '" data-photo="' + item.Photo + ' " id="info_btn">產品訊息</a></div></div>';
         //                 }
         //             } else {
         //                 var productlist = '';

@@ -14,13 +14,13 @@
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
 
-<body style="background-image: url(images/manager_bg.jpg); background-attachment: fixed;">
+<body style="background-image: url(https://littlebaker.000webhostapp.com/images/manager_bg.jpg); background-attachment: fixed;">
     <div id="app">
         <!-- s100 選單 -->
         <section style="background-color: var(--brown11);">
             <div class="container">
                 <div class="row">
-                    <div class="col-4 mt-3"><a href="index.html"><img src="images/little_baker.png"
+                    <div class="col-4 mt-3"><a href="index.html"><img src="https://littlebaker.000webhostapp.com/images/little_baker.png"
                                 class="logo-change wow" data-wow-delay="0s" data-wow-duration="1s" style="width: 180px;"
                                 id="logo_change"></a></div>
                     <div class="col-8">
@@ -233,12 +233,12 @@
             // 帶入網頁要立刻讀取的資料放 created
             created() {
                 const vm = this;
-                const url = 'api/cart/all_order_read_api.php';
+                const url = 'https://littlebaker.000webhostapp.com/api/cart/all_order_read_api.php';
                 // const checkUser = 'api/check_uid_api.php';
                 axios.get(url)
                     .then(function (response) {
                         // handle success
-                        console.log(response);
+                        // console.log(response);
                         vm.data = response.data.data;  // 將撈取到的資料放進 data[] 裡面
                         vm.Vue_uid = this.getCookie('uid01');
 
@@ -252,7 +252,7 @@
                     })
                     .catch(function (error) {
                         // handle error
-                        console.log(error);
+                        // console.log(error);
                     })
                     .finally(function () {
                         // always executed
@@ -333,7 +333,7 @@
                 // uid 存在，傳遞至後端 check_uid_api.php 確認是否合法
                 $.ajax({
                     type: "POST",
-                    url: "api/check_uid_api.php",
+                    url: "https://littlebaker.000webhostapp.com/api/check_uid_api.php",
                     data: { uid: getCookie('uid01') },
                     dataType: "json",
                     success: showdata_check_uid,
@@ -420,7 +420,7 @@
                 $("#show_address").text($(this).data("address"));
                 $("#show_pay").text($(this).data("pay"));
                 $("#show_total").text($(this).data("total"));
-                $("#origin_img").attr('src', 'upload/' + $(this).data("update_photo"));
+                $("#origin_img").attr('src', 'https://littlebaker.000webhostapp.com/upload/' + $(this).data("update_photo"));
                 pid = $(this).data("id");
             });
 
@@ -470,7 +470,7 @@
                 if ($("#add_category").val() == '') {
                     $flag_category = false;
                 } else {
-                    console.log($("#add_category").select().val());
+                    // console.log($("#add_category").select().val());
                     $flag_category = true;
                 }
             });
@@ -482,7 +482,7 @@
                     // 檢查帳號是否重複
                     $.ajax({
                         type: "POST",
-                        url: "api/product_check_api.php",
+                        url: "https://littlebaker.000webhostapp.com/api/product_check_api.php",
                         data: { product: $("#add_product").val() },
                         dataType: "json",
                         success: showdata_uniproduct,
@@ -544,11 +544,11 @@
                 // 取得要上傳的檔案資料
                 // console.log(fileupload);
                 // 顯示檔案 name, type, size 等資訊
-                console.log(fileupload.files[0]);
+                // console.log(fileupload.files[0]);
                 // 指定顯示檔案 type
                 // console.log(fileupload.files[0].type);  
                 // 預覽圖片
-                console.log(URL.createObjectURL(fileupload.files[0]));
+                // console.log(URL.createObjectURL(fileupload.files[0]));
 
                 // 檢查檔案格式是否符合，若符合顯示預覽
                 if (fileupload.files[0].type == 'image/png' || fileupload.files[0].type == 'image/jpeg') {
@@ -574,7 +574,7 @@
                     formData.append('file', fileupload.files[0]);
                     $.ajax({
                         type: "POST",
-                        url: "api/product/product_create_api.php",
+                        url: "https://littlebaker.000webhostapp.com/api/product/product_create_api.php",
                         data: formData,
                         dataType: "json",
                         cache: false,
@@ -601,7 +601,7 @@
                 // 重新載入產品列表
                 $.ajax({
                     type: "GET",
-                    url: "api/product/product_read_api.php",
+                    url: "https://littlebaker.000webhostapp.com/api/product/product_read_api.php",
                     dataType: "json",
                     async: false,
                     success: showdata_product,
@@ -694,7 +694,7 @@
                     }
 
 
-                    var strHTML = '<tr class="table-body"><td data-th="編號">' + item.id + '</td><td data-th="類別">' + item.Category + '</td><td data-th="產品圖" class="product-box"><img src="upload/' + item.Photo + '" class="w-100"></td><td data-th="產品名稱">' + item.Product + '</td><td data-th="產品價格">' + item.Price + '</td><td data-th="會員價">' + item.Discount + '</td><td data-th="產品資訊">' + item.Content + '</td><td>' + switch02 + '</td><td><a href="#" class="btn btn-default me-2" data-bs-toggle="modal" data-bs-target="#productupdateModal" data-id="' + item.id + '" data-update_category="' + item.Category + '" data-update_product="' + item.Product + '" data-update_price="' + item.Price + '" data-update_discount="' + item.Discount + '" data-update_content="' + item.Content + '" data-update_photo="' + item.Photo + ' " id="product_update_btn">修改</a><a href="#" class="btn btn-light" data-id="' + item.id + '" data-product="' + item.Product + '" id="product_delete_btn">刪除</a></td></tr>';
+                    var strHTML = '<tr class="table-body"><td data-th="編號">' + item.id + '</td><td data-th="類別">' + item.Category + '</td><td data-th="產品圖" class="product-box"><img src="https://littlebaker.000webhostapp.com/upload/' + item.Photo + '" class="w-100"></td><td data-th="產品名稱">' + item.Product + '</td><td data-th="產品價格">' + item.Price + '</td><td data-th="會員價">' + item.Discount + '</td><td data-th="產品資訊">' + item.Content + '</td><td>' + switch02 + '</td><td><a href="#" class="btn btn-default me-2" data-bs-toggle="modal" data-bs-target="#productupdateModal" data-id="' + item.id + '" data-update_category="' + item.Category + '" data-update_product="' + item.Product + '" data-update_price="' + item.Price + '" data-update_discount="' + item.Discount + '" data-update_content="' + item.Content + '" data-update_photo="' + item.Photo + ' " id="product_update_btn">修改</a><a href="#" class="btn btn-light" data-id="' + item.id + '" data-product="' + item.Product + '" id="product_delete_btn">刪除</a></td></tr>';
 
                     $("#product_table").append(strHTML);
                 })
@@ -722,7 +722,7 @@
                 // 重新載入產品列表
                 $.ajax({
                     type: "GET",
-                    url: "api/product/product_read_api.php",
+                    url: "https://littlebaker.000webhostapp.com/api/product/product_read_api.php",
                     dataType: "json",
                     async: false,
                     success: showdata_product,
@@ -750,7 +750,7 @@
                 alert(data.message);
                 $.ajax({
                     type: "GET",
-                    url: "api/product/product_read_api.php",
+                    url: "https://littlebaker.000webhostapp.com/api/product/product_read_api.php",
                     dataType: "json",
                     async: false,
                     success: showdata_product,
@@ -780,7 +780,7 @@
                     // 顯示會員列表
                     $.ajax({
                         type: "GET",
-                        url: "api/admin/member_read_api.php",
+                        url: "https://littlebaker.000webhostapp.com/api/admin/member_read_api.php",
                         dataType: "json",
                         async: false,
                         success: showdata_member,
@@ -810,7 +810,7 @@
                         if ($flag_realname && $flag_birthday && $flag_phone && $flag_email) {
                             $.ajax({
                                 type: "POST",
-                                url: "api/admin/member_update_api.php",
+                                url: "https://littlebaker.000webhostapp.com/api/admin/member_update_api.php",
                                 data: { realname: $("#realname").val(), birthday: $("#birthday").val(), phone: $("#phone").val(), email: $("#email").val(), id: uid },
                                 dataType: "json",
                                 success: showdata_member_update,
@@ -831,7 +831,7 @@
                         if (confirm("確認刪除 " + $(this).data("orderno") + " 此筆訂單 ?")) {
                             $.ajax({
                                 type: "POST",
-                                url: "api/cart/order_delete_api.php",
+                                url: "https://littlebaker.000webhostapp.com/api/cart/order_delete_api.php",
                                 data: { id: $(this).data("id") },
                                 dataType: "json",
                                 success: showdata_order_delete,
@@ -845,7 +845,7 @@
                     // 顯示產品列表
                     $.ajax({
                         type: "GET",
-                        url: "api/product/product_read_api.php",
+                        url: "https://littlebaker.000webhostapp.com/api/product/product_read_api.php",
                         dataType: "json",
                         async: false,
                         success: showdata_product,
@@ -861,7 +861,7 @@
                         $("#update_price").val($(this).data("update_price"));
                         $("#update_discount").val($(this).data("update_discount"));
                         $("#update_content").val($(this).data("update_content"));
-                        $("#origin_img").attr('src', 'upload/' + $(this).data("update_photo"));
+                        $("#origin_img").attr('src', 'https://littlebaker.000webhostapp.com/upload/' + $(this).data("update_photo"));
                         pid = $(this).data("id");
                     });
 
@@ -885,7 +885,7 @@
                             // 檢查產品是否重複
                             $.ajax({
                                 type: "POST",
-                                url: "api/product_check_api.php",
+                                url: "https://littlebaker.000webhostapp.com/api/product_check_api.php",
                                 data: { product: $("#update_product").val() },
                                 dataType: "json",
                                 success: showdata_uniproduct02,
@@ -947,11 +947,11 @@
                         // 取得要上傳的檔案資料
                         // console.log(fileupload);
                         // 顯示檔案 name, type, size 等資訊
-                        console.log(newfileupload.files[0]);
+                        // console.log(newfileupload.files[0]);
                         // 指定顯示檔案 type
                         // console.log(fileupload.files[0].type);  
                         // 預覽圖片
-                        console.log(URL.createObjectURL(newfileupload.files[0]));
+                        // console.log(URL.createObjectURL(newfileupload.files[0]));
 
                         // 檢查檔案格式是否符合，若符合顯示預覽
                         if (newfileupload.files[0].type == 'image/png' || newfileupload.files[0].type == 'image/jpeg') {
@@ -986,7 +986,7 @@
 
                                 $.ajax({
                                     type: "POST",
-                                    url: "api/product/product_update_api.php",
+                                    url: "https://littlebaker.000webhostapp.com/api/product/product_update_api.php",
                                     data: formData,
                                     dataType: "json",
                                     cache: false,
@@ -1008,7 +1008,7 @@
 
                                 $.ajax({
                                     type: "POST",
-                                    url: "api/product/nophoto_update_api.php",
+                                    url: "https://littlebaker.000webhostapp.com/api/product/nophoto_update_api.php",
                                     data: nophotoData,
                                     dataType: "json",
                                     cache: false,
@@ -1034,7 +1034,7 @@
                         if (confirm("確認刪除 " + $(this).data("product") + "?")) {
                             $.ajax({
                                 type: "POST",
-                                url: "api/product/product_delete_api.php",
+                                url: "https://littlebaker.000webhostapp.com/api/product/product_delete_api.php",
                                 data: { id: $(this).data("id") },
                                 dataType: "json",
                                 success: showdata_product_delete,
@@ -1064,7 +1064,7 @@
                         // 傳遞 id 和 啟用/停權 至後端更新會員狀態
                         $.ajax({
                             type: "POST",
-                            url: "api/admin/member_userstate_api.php",
+                            url: "https://littlebaker.000webhostapp.com/api/admin/member_userstate_api.php",
                             data: { id: state_id, userstate: userstate },
                             dataType: "json",
                             success: showdata_userstate,
@@ -1091,7 +1091,7 @@
                         // 傳遞 id 和 管理者權限 至後端更新會員狀態
                         $.ajax({
                             type: "POST",
-                            url: "api/admin/member_isadmin_api.php",
+                            url: "https://littlebaker.000webhostapp.com/api/admin/member_isadmin_api.php",
                             data: { id: state_id, isadmin: isadmin },
                             dataType: "json",
                             success: showdata_isadmin,
@@ -1119,7 +1119,7 @@
                         // 傳遞 id 和 上架/停售 至後端更新會員狀態
                         $.ajax({
                             type: "POST",
-                            url: "api/product/product_state_api.php",
+                            url: "https://littlebaker.000webhostapp.com/api/product/product_state_api.php",
                             data: { id: state_id, sellstate: sellstate },
                             dataType: "json",
                             success: showdata_sellstate,
