@@ -405,7 +405,7 @@
             };
 
             // 產品資料修改按鈕監聽
-            $("#order_info_btn").click(function () {
+            $(document).on('click', '#order_list #order_info_btn', function () {
                 // var products = $(this).data("products").split(", ").join("<p></p>");
                 // var quantities = $(this).data("quantities").split(", ").join("<p></p>");
                 // var prices = $(this).data("prices").split(", ").join("<p></p>");
