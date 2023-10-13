@@ -233,7 +233,7 @@
             // 帶入網頁要立刻讀取的資料放 created
             created() {
                 const vm = this;
-                const url = 'api/cart/all_order_read_api.php';
+                const url = 'https://littlebaker.000webhostapp.com/api/cart/all_order_read_api.php';
                 // const checkUser = 'api/check_uid_api.php';
                 axios.get(url)
                     .then(function (response) {
@@ -333,7 +333,7 @@
                 // uid 存在，傳遞至後端 check_uid_api.php 確認是否合法
                 $.ajax({
                     type: "POST",
-                    url: "api/check_uid_api.php",
+                    url: "https://littlebaker.000webhostapp.com/api/check_uid_api.php",
                     data: { uid: getCookie('uid01') },
                     dataType: "json",
                     success: showdata_check_uid,
@@ -482,7 +482,7 @@
                     // 檢查帳號是否重複
                     $.ajax({
                         type: "POST",
-                        url: "api/product_check_api.php",
+                        url: "https://littlebaker.000webhostapp.com/api/product_check_api.php",
                         data: { product: $("#add_product").val() },
                         dataType: "json",
                         success: showdata_uniproduct,
@@ -574,7 +574,7 @@
                     formData.append('file', fileupload.files[0]);
                     $.ajax({
                         type: "POST",
-                        url: "api/product/product_create_api.php",
+                        url: "https://littlebaker.000webhostapp.com/api/product/product_create_api.php",
                         data: formData,
                         dataType: "json",
                         cache: false,
@@ -601,7 +601,7 @@
                 // 重新載入產品列表
                 $.ajax({
                     type: "GET",
-                    url: "api/product/product_read_api.php",
+                    url: "https://littlebaker.000webhostapp.com/api/product/product_read_api.php",
                     dataType: "json",
                     async: false,
                     success: showdata_product,
@@ -722,7 +722,7 @@
                 // 重新載入產品列表
                 $.ajax({
                     type: "GET",
-                    url: "api/product/product_read_api.php",
+                    url: "https://littlebaker.000webhostapp.com/api/product/product_read_api.php",
                     dataType: "json",
                     async: false,
                     success: showdata_product,
@@ -750,7 +750,7 @@
                 alert(data.message);
                 $.ajax({
                     type: "GET",
-                    url: "api/product/product_read_api.php",
+                    url: "https://littlebaker.000webhostapp.com/api/product/product_read_api.php",
                     dataType: "json",
                     async: false,
                     success: showdata_product,
@@ -780,7 +780,7 @@
                     // 顯示會員列表
                     $.ajax({
                         type: "GET",
-                        url: "api/admin/member_read_api.php",
+                        url: "https://littlebaker.000webhostapp.com/api/admin/member_read_api.php",
                         dataType: "json",
                         async: false,
                         success: showdata_member,
@@ -810,7 +810,7 @@
                         if ($flag_realname && $flag_birthday && $flag_phone && $flag_email) {
                             $.ajax({
                                 type: "POST",
-                                url: "api/admin/member_update_api.php",
+                                url: "https://littlebaker.000webhostapp.com/api/admin/member_update_api.php",
                                 data: { realname: $("#realname").val(), birthday: $("#birthday").val(), phone: $("#phone").val(), email: $("#email").val(), id: uid },
                                 dataType: "json",
                                 success: showdata_member_update,
@@ -831,7 +831,7 @@
                         if (confirm("確認刪除 " + $(this).data("orderno") + " 此筆訂單 ?")) {
                             $.ajax({
                                 type: "POST",
-                                url: "api/cart/order_delete_api.php",
+                                url: "https://littlebaker.000webhostapp.com/api/cart/order_delete_api.php",
                                 data: { id: $(this).data("id") },
                                 dataType: "json",
                                 success: showdata_order_delete,
@@ -845,7 +845,7 @@
                     // 顯示產品列表
                     $.ajax({
                         type: "GET",
-                        url: "api/product/product_read_api.php",
+                        url: "https://littlebaker.000webhostapp.com/api/product/product_read_api.php",
                         dataType: "json",
                         async: false,
                         success: showdata_product,
@@ -885,7 +885,7 @@
                             // 檢查產品是否重複
                             $.ajax({
                                 type: "POST",
-                                url: "api/product_check_api.php",
+                                url: "https://littlebaker.000webhostapp.com/api/product_check_api.php",
                                 data: { product: $("#update_product").val() },
                                 dataType: "json",
                                 success: showdata_uniproduct02,
@@ -986,7 +986,7 @@
 
                                 $.ajax({
                                     type: "POST",
-                                    url: "api/product/product_update_api.php",
+                                    url: "https://littlebaker.000webhostapp.com/api/product/product_update_api.php",
                                     data: formData,
                                     dataType: "json",
                                     cache: false,
@@ -1008,7 +1008,7 @@
 
                                 $.ajax({
                                     type: "POST",
-                                    url: "api/product/nophoto_update_api.php",
+                                    url: "https://littlebaker.000webhostapp.com/api/product/nophoto_update_api.php",
                                     data: nophotoData,
                                     dataType: "json",
                                     cache: false,
@@ -1034,7 +1034,7 @@
                         if (confirm("確認刪除 " + $(this).data("product") + "?")) {
                             $.ajax({
                                 type: "POST",
-                                url: "api/product/product_delete_api.php",
+                                url: "https://littlebaker.000webhostapp.com/api/product/product_delete_api.php",
                                 data: { id: $(this).data("id") },
                                 dataType: "json",
                                 success: showdata_product_delete,
@@ -1064,7 +1064,7 @@
                         // 傳遞 id 和 啟用/停權 至後端更新會員狀態
                         $.ajax({
                             type: "POST",
-                            url: "api/admin/member_userstate_api.php",
+                            url: "https://littlebaker.000webhostapp.com/api/admin/member_userstate_api.php",
                             data: { id: state_id, userstate: userstate },
                             dataType: "json",
                             success: showdata_userstate,
@@ -1091,7 +1091,7 @@
                         // 傳遞 id 和 管理者權限 至後端更新會員狀態
                         $.ajax({
                             type: "POST",
-                            url: "api/admin/member_isadmin_api.php",
+                            url: "https://littlebaker.000webhostapp.com/api/admin/member_isadmin_api.php",
                             data: { id: state_id, isadmin: isadmin },
                             dataType: "json",
                             success: showdata_isadmin,
@@ -1119,7 +1119,7 @@
                         // 傳遞 id 和 上架/停售 至後端更新會員狀態
                         $.ajax({
                             type: "POST",
-                            url: "api/product/product_state_api.php",
+                            url: "https://littlebaker.000webhostapp.com/api/product/product_state_api.php",
                             data: { id: state_id, sellstate: sellstate },
                             dataType: "json",
                             success: showdata_sellstate,
