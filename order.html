@@ -406,27 +406,23 @@
 
             // 產品資料修改按鈕監聽
             $(document).on('click', '#order_list #order_info_btn', function () {
-                // var products = $(this).data("products").split(", ").join("<p></p>");
-                // var quantities = $(this).data("quantities").split(", ").join("<p></p>");
-                // var prices = $(this).data("prices").split(", ").join("<p></p>");
-                console.log("123456");
+                var products = $(this).data("products").split(", ").join("<p></p>");
+                var quantities = $(this).data("quantities").split(", ").join("<p></p>");
+                var prices = $(this).data("prices").split(", ").join("<p></p>");
+                console.log(products);
 
-                // $("#show_orderno").text("訂單編號：" + $(this).data("orderno"));
-                // $("#show_createtime").text("下單時間：" + $(this).data("createtime"));
-                // $("#show_products").html(products);
-                // $("#show_quantities").html(quantities);
-                // $("#show_prices").html(prices);
-                // $("#show_realname").text($(this).data("realname"));
-                // $("#show_phone").text($(this).data("phone"));
-                // $("#show_address").text($(this).data("address"));
-                // $("#show_pay").text($(this).data("pay"));
-                // $("#show_total").text($(this).data("total"));
-                // $("#origin_img").attr('src', 'upload/' + $(this).data("update_photo"));
-                // pid = $(this).data("id");
-            });
-
-            $("#order_delete_btn").click(function (){
-                console.log("123");
+                $("#show_orderno").text("訂單編號：" + $(this).data("orderno"));
+                $("#show_createtime").text("下單時間：" + $(this).data("createtime"));
+                $("#show_products").html(products);
+                $("#show_quantities").html(quantities);
+                $("#show_prices").html(prices);
+                $("#show_realname").text($(this).data("realname"));
+                $("#show_phone").text($(this).data("phone"));
+                $("#show_address").text($(this).data("address"));
+                $("#show_pay").text($(this).data("pay"));
+                $("#show_total").text($(this).data("total"));
+                $("#origin_img").attr('src', 'upload/' + $(this).data("update_photo"));
+                pid = $(this).data("id");
             });
 
             $("#s100_logout_btn").click(function () {
