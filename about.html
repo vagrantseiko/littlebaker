@@ -20,7 +20,8 @@
         <section style="background-color: var(--brown11);">
             <div class="container">
                 <div class="row">
-                    <div class="col-4 mt-3"><a href="index.html"><img src="https://littlebaker.000webhostapp.com/images/little_baker.png"
+                    <div class="col-4 mt-3"><a href="index.html"><img
+                                src="https://littlebaker.000webhostapp.com/images/little_baker.png"
                                 class="logo-change wow" data-wow-delay="0s" data-wow-duration="1s" style="width: 180px;"
                                 id="logo_change"></a></div>
                     <div class="col-8">
@@ -77,7 +78,8 @@
             </div>
         </section>
 
-        <section id="s200" style="background-image: url(https://littlebaker.000webhostapp.com/images/pexels-pavel-danilyuk-5623616.jpg); height: 100vh;">
+        <section id="s200"
+            style="background-image: url(https://littlebaker.000webhostapp.com/images/pexels-pavel-danilyuk-5623616.jpg); height: 100vh;">
             <div class="container">
                 <div class="row">
                     <div class="col-6" style="height: 33vh;"></div>
@@ -97,7 +99,8 @@
             </div>
         </section>
 
-        <section id="s201" style="background-image: url(https://littlebaker.000webhostapp.com/images/pexels-ksenia-chernaya-3952077.jpg); height: 100vh;">
+        <section id="s201"
+            style="background-image: url(https://littlebaker.000webhostapp.com/images/pexels-ksenia-chernaya-3952077.jpg); height: 100vh;">
             <div class="container">
                 <div class="row">
                     <div class="col-6" style="height: 33vh;"></div>
@@ -121,7 +124,8 @@
         </section>
 
         <!-- s300 企業精神-->
-        <section id="s300" style="background-image: url(https://littlebaker.000webhostapp.com/images/pexels-mariana-kurnyk-1756064.jpg); height: 100vh;">
+        <section id="s300"
+            style="background-image: url(https://littlebaker.000webhostapp.com/images/pexels-mariana-kurnyk-1756064.jpg); height: 100vh;">
             <div class="container mb-3">
                 <div class="row pt-5">
                     <div class="col-md-6">
@@ -129,7 +133,8 @@
                         </div>
                     </div>
                     <div class="col-md-6 wow animate__fadeInLeft pt-2" data-wow-delay="0s" data-wow-duration="3s">
-                        <div class="d-flex align-items-center spirit p-3 rounded-2" style="background-color: rgba(100, 100, 100, 0.1);">
+                        <div class="d-flex align-items-center spirit p-3 rounded-2"
+                            style="background-color: rgba(100, 100, 100, 0.1);">
                             <!-- <i class="fa-solid fa-address-card fa-4x me-2"></i> -->
                             <div>
                                 <p class="fs-3 fw-200 text-center text-dark">安心品質</p>
@@ -140,7 +145,8 @@
                     </div>
 
                     <div class="col-md-6 wow animate__fadeInRight" data-wow-delay="0s" data-wow-duration="3s">
-                        <div class="d-flex align-items-center spirit p-3 rounded-2" style="background-color: rgba(100, 100, 100, 0.1);">
+                        <div class="d-flex align-items-center spirit p-3 rounded-2"
+                            style="background-color: rgba(100, 100, 100, 0.1);">
                             <!-- <i class="fa-regular fa-handshake fa-4x me-3"></i> -->
                             <div>
                                 <p class="fs-3 fw-200 text-center text-dark">產品應用</p>
@@ -159,7 +165,8 @@
                         </div>
                     </div>
                     <div class="col-md-6 wow animate__fadeInLeft" data-wow-delay="0s" data-wow-duration="3s">
-                        <div class="d-flex align-items-center spirit p-3 rounded-2" style="background-color: rgba(100, 100, 100, 0.1);">
+                        <div class="d-flex align-items-center spirit p-3 rounded-2"
+                            style="background-color: rgba(100, 100, 100, 0.1);">
                             <!-- <i class="fa-solid fa-truck-fast fa-4x me-3"></i> -->
                             <div>
                                 <p class="fs-3 fw-200 text-center text-dark">物流配送</p>
@@ -173,7 +180,8 @@
 
 
                     <div class="col-md-6 wow animate__fadeInRight" data-wow-delay="0s" data-wow-duration="3s">
-                        <div class="d-flex align-items-center spirit p-3 rounded-2" style="background-color: rgba(100, 100, 100, 0.1);">
+                        <div class="d-flex align-items-center spirit p-3 rounded-2"
+                            style="background-color: rgba(100, 100, 100, 0.1);">
                             <!-- <i class="fa-solid fa-arrow-trend-up fa-4x me-3"></i> -->
                             <div>
                                 <p class="fs-3 fw-200 text-center text-dark">創新進步</p>
@@ -693,13 +701,18 @@
                 // 會員密碼註冊即時監聽
                 $("#register_password").bind("input propertychange", function () {
                     if ($(this).val().length > 5 && $(this).val().length < 13) {
-
-                        $(this).removeClass("is-invalid");
-                        $(this).addClass("is-valid");
-                        $flag_register_password = true;
+                        if ($(this).val() == $("#repassword").val()) {
+                            // $(this).removeClass("is-invalid");
+                            // $(this).addClass("is-valid");
+                            $flag_register_password = true;
+                        } else {
+                            // $(this).removeClass("is-valid");
+                            // $(this).addClass("is-invalid");
+                            $flag_register_password = false;
+                        }
                     } else {
-                        $(this).removeClass("is-valid");
-                        $(this).addClass("is-invalid");
+                        // $(this).removeClass("is-valid");
+                        // $(this).addClass("is-invalid");
                         $flag_register_password = false;
                     }
                 });

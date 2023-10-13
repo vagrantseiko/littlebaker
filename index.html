@@ -24,7 +24,8 @@
     <section style="background-color: var(--brown11);">
         <div class="container">
             <div class="row">
-                <div class="col-4 mt-3"><a href="index.html"><img src="https://littlebaker.000webhostapp.com/images/little_baker.png" class="logo-change wow"
+                <div class="col-4 mt-3"><a href="index.html"><img
+                            src="https://littlebaker.000webhostapp.com/images/little_baker.png" class="logo-change wow"
                             data-wow-delay="0s" data-wow-duration="1s" style="width: 180px;" id="logo_change"></a></div>
                 <div class="col-8">
                     <div class="row mb-3 mt-2">
@@ -105,7 +106,8 @@
     </div>
 
     <section>
-        <div class="bg-cover" style="background-image: url(https://littlebaker.000webhostapp.com/images/pexels-marina-m-8356208.jpg); height: 350px;">
+        <div class="bg-cover"
+            style="background-image: url(https://littlebaker.000webhostapp.com/images/pexels-marina-m-8356208.jpg); height: 350px;">
             <div class="container">
                 <div class="row pt-3 wow animate__fadeInLeft mb-3" data-wow-delay="0s" data-wow-duration="2s">
                     <div class="col-2">
@@ -148,14 +150,15 @@
     </section>
 
     <section>
-        <div class="bg-cover" style="background-image: url(https://littlebaker.000webhostapp.com/images/pexels-lukas-628281.jpg); height: 500px;">
+        <div class="bg-cover"
+            style="background-image: url(https://littlebaker.000webhostapp.com/images/pexels-lukas-628281.jpg); height: 500px;">
             <div class="container">
                 <div class="row wow animate__fadeInRight mb-3" data-wow-delay="0s" data-wow-duration="2s">
                     <div class="col-2 m-2">
                         <p class="fs-4 pt-2">新品上架</p>
                     </div>
                     <div class="col-9">
-                        <div class="row"  id="show_top3">
+                        <div class="row" id="show_top3">
                             <!-- <div class="col-3 m-2">
                                 <div class="mt-5">
                                     <div class="card ps-2 pe-2 justify-content-center"
@@ -532,13 +535,18 @@
             // 會員密碼註冊即時監聽
             $("#register_password").bind("input propertychange", function () {
                 if ($(this).val().length > 5 && $(this).val().length < 13) {
-
-                    $(this).removeClass("is-invalid");
-                    $(this).addClass("is-valid");
-                    $flag_register_password = true;
+                    if ($(this).val() == $("#repassword").val()) {
+                        // $(this).removeClass("is-invalid");
+                        // $(this).addClass("is-valid");
+                        $flag_register_password = true;
+                    } else {
+                        // $(this).removeClass("is-valid");
+                        // $(this).addClass("is-invalid");
+                        $flag_register_password = false;
+                    }
                 } else {
-                    $(this).removeClass("is-valid");
-                    $(this).addClass("is-invalid");
+                    // $(this).removeClass("is-valid");
+                    // $(this).addClass("is-invalid");
                     $flag_register_password = false;
                 }
             });
@@ -676,7 +684,7 @@
         function showdata_top3(data) {
 
             for (var x = 0; x <= 2; x++) {
-                var newPro = '<div class="col-3 m-2"><div class="mt-5"><div class="card ps-2 pe-2 justify-content-center"style="background-color: var(--brown11)"><div class="col d-flex justify-content-center product-box"><img src="https://littlebaker.000webhostapp.com/upload/'+data.data[x].Photo+'" class="img-thumbnail mt-2 mb-2"></div><h6 class="text-center" style="height: 45px;">'+data.data[x].Product+'</h6><div class="text-center">售價：$ '+data.data[x].Price+'</div><a href="#" class="btn btn-default m-3">查看更多</a></div></div></div>';
+                var newPro = '<div class="col-3 m-2"><div class="mt-5"><div class="card ps-2 pe-2 justify-content-center"style="background-color: var(--brown11)"><div class="col d-flex justify-content-center product-box"><img src="https://littlebaker.000webhostapp.com/upload/' + data.data[x].Photo + '" class="img-thumbnail mt-2 mb-2"></div><h6 class="text-center" style="height: 45px;">' + data.data[x].Product + '</h6><div class="text-center">售價：$ ' + data.data[x].Price + '</div><a href="#" class="btn btn-default m-3">查看更多</a></div></div></div>';
 
                 $("#show_top3").append(newPro);
             }

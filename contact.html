@@ -23,13 +23,15 @@
     </style>
 </head>
 
-<body style="background-image: url(https://littlebaker.000webhostapp.com/images/bakery02.jpg); background-attachment: fixed;">
+<body
+    style="background-image: url(https://littlebaker.000webhostapp.com/images/bakery02.jpg); background-attachment: fixed;">
     <div id="app">
         <!-- s100 選單 -->
         <section style="background-color: var(--brown11);">
             <div class="container">
                 <div class="row">
-                    <div class="col-4 mt-3"><a href="index.html"><img src="https://littlebaker.000webhostapp.com/images/little_baker.png"
+                    <div class="col-4 mt-3"><a href="index.html"><img
+                                src="https://littlebaker.000webhostapp.com/images/little_baker.png"
                                 class="logo-change wow" data-wow-delay="0s" data-wow-duration="1s" style="width: 180px;"
                                 id="logo_change"></a></div>
                     <div class="col-8">
@@ -86,7 +88,8 @@
             </div>
         </section>
 
-        <div class="container my-3 rounded-3 wow animate__fadeIn" data-wow-delay="0s" data-wow-duration="1.5s" style="background-color: rgba(0, 0, 0, 0.5); height: 85vh;">
+        <div class="container my-3 rounded-3 wow animate__fadeIn" data-wow-delay="0s" data-wow-duration="1.5s"
+            style="background-color: rgba(0, 0, 0, 0.5); height: 85vh;">
         </div>
 
         <!-- 註冊Modal RegisterModal -->
@@ -590,13 +593,18 @@
                 // 會員密碼註冊即時監聽
                 $("#register_password").bind("input propertychange", function () {
                     if ($(this).val().length > 5 && $(this).val().length < 13) {
-
-                        $(this).removeClass("is-invalid");
-                        $(this).addClass("is-valid");
-                        $flag_register_password = true;
+                        if ($(this).val() == $("#repassword").val()) {
+                            // $(this).removeClass("is-invalid");
+                            // $(this).addClass("is-valid");
+                            $flag_register_password = true;
+                        } else {
+                            // $(this).removeClass("is-valid");
+                            // $(this).addClass("is-invalid");
+                            $flag_register_password = false;
+                        }
                     } else {
-                        $(this).removeClass("is-valid");
-                        $(this).addClass("is-invalid");
+                        // $(this).removeClass("is-valid");
+                        // $(this).addClass("is-invalid");
                         $flag_register_password = false;
                     }
                 });

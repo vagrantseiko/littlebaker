@@ -14,13 +14,15 @@
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
 
-<body style="background-image: url(https://littlebaker.000webhostapp.com/images/member_bg.jpg); background-attachment: fixed;">
+<body
+    style="background-image: url(https://littlebaker.000webhostapp.com/images/member_bg.jpg); background-attachment: fixed;">
     <div id="app">
         <!-- s100 選單 -->
         <section style="background-color: var(--brown11);">
             <div class="container">
                 <div class="row">
-                    <div class="col-4 mt-3"><a href="index.html"><img src="https://littlebaker.000webhostapp.com/images/little_baker.png"
+                    <div class="col-4 mt-3"><a href="index.html"><img
+                                src="https://littlebaker.000webhostapp.com/images/little_baker.png"
                                 class="logo-change wow" data-wow-delay="0s" data-wow-duration="1s" style="width: 180px;"
                                 id="logo_change"></a></div>
                     <div class="col-8">
@@ -48,8 +50,8 @@
                                             data-wow-delay="0s" data-wow-duration="1s">公司資訊</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="news.html" class="nav-link ms-3 me-3 menu-top-selected wow" data-wow-delay="0s"
-                                            data-wow-duration="1.6s">最新消息</a>
+                                        <a href="news.html" class="nav-link ms-3 me-3 menu-top-selected wow"
+                                            data-wow-delay="0s" data-wow-duration="1.6s">最新消息</a>
                                     </li>
                                     <li class="nav-item">
                                         <a href="flour.html" class="nav-link ms-3 me-3 menu-top wow animate__flipInX"
@@ -582,13 +584,18 @@
                 // 會員密碼註冊即時監聽
                 $("#register_password").bind("input propertychange", function () {
                     if ($(this).val().length > 5 && $(this).val().length < 13) {
-
-                        $(this).removeClass("is-invalid");
-                        $(this).addClass("is-valid");
-                        $flag_register_password = true;
+                        if ($(this).val() == $("#repassword").val()) {
+                            // $(this).removeClass("is-invalid");
+                            // $(this).addClass("is-valid");
+                            $flag_register_password = true;
+                        } else {
+                            // $(this).removeClass("is-valid");
+                            // $(this).addClass("is-invalid");
+                            $flag_register_password = false;
+                        }
                     } else {
-                        $(this).removeClass("is-valid");
-                        $(this).addClass("is-invalid");
+                        // $(this).removeClass("is-valid");
+                        // $(this).addClass("is-invalid");
                         $flag_register_password = false;
                     }
                 });
