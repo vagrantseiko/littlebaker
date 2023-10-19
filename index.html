@@ -807,7 +807,7 @@
         function showdata_top3(data) {
 
             for (var x = 0; x <= 2; x++) {
-                var newPro = '<div class="col-lg-3 col-4 m-lg-2"><div class="mt-5"><div class="card ps-2 pe-2 justify-content-center"style="background-color: var(--brown11)"><div class="col d-flex justify-content-center product-box"><img src="https://littlebaker.000webhostapp.com/upload/' + data.data[x].Photo + '" class="img-thumbnail mt-2 mb-2"></div><h6 class="text-center" style="height: 45px;">' + data.data[x].Product + '</h6><div class="text-center">售價：$ ' + data.data[x].Price + '</div><a href="#" class="btn btn-default m-3">查看更多</a></div></div></div>';
+                var newPro = '<div class="col-lg-3 col-4 m-lg-2"><div class="mt-5"><div class="card ps-2 pe-2 justify-content-center"style="background-color: var(--brown11)"><div class="col d-flex justify-content-center product-box"><img src="https://littlebaker.000webhostapp.com/upload/' + data.data[x].Photo + '" class="img-thumbnail mt-2 mb-2"></div><h6 class="text-center" style="height: 45px;">' + data.data[x].Product + '</h6><div class="text-center">售價：$ ' + data.data[x].Price + '</div><a href="#" class="btn btn-default m-3 fs-1">查看更多</a></div></div></div>';
 
                 $("#show_top3").append(newPro);
             }
