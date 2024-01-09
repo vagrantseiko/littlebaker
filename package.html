@@ -685,18 +685,13 @@
             // 會員密碼註冊即時監聽
             $("#register_password").bind("input propertychange", function () {
                 if ($(this).val().length > 5 && $(this).val().length < 13) {
-                    if ($(this).val() == $("#repassword").val()) {
-                        // $(this).removeClass("is-invalid");
-                        // $(this).addClass("is-valid");
-                        $flag_register_password = true;
-                    } else {
-                        // $(this).removeClass("is-valid");
-                        // $(this).addClass("is-invalid");
-                        $flag_register_password = false;
-                    }
+
+                    $(this).removeClass("is-invalid");
+                    $(this).addClass("is-valid");
+                    $flag_register_password = true;
                 } else {
-                    // $(this).removeClass("is-valid");
-                    // $(this).addClass("is-invalid");
+                    $(this).removeClass("is-valid");
+                    $(this).addClass("is-invalid");
                     $flag_register_password = false;
                 }
             });
